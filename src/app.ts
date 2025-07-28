@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Routes
 //Http methods;
-app.get('/', (req,res,next) =>{
+app.get('/', (req:Request,res:Response,next:NextFunction) =>{
     res.json({message: "Welcome to elib api"})
 })
 
