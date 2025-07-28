@@ -24,6 +24,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
       return next(error);
     }
   } catch (err) {
+    console.log(err)
     return next(createHttpError(500, "Error while getting user"));
   }
 
@@ -38,6 +39,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
       password: hashedPassword,
     });
   } catch (err) {
+    console.log(err)
     return next(createHttpError(500, "Error while creating user."));
   }
 
@@ -51,6 +53,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
     //response
     res.status(201).json({ accessToken: token });
   } catch (err) {
+    console.log(err)
     return next(createHttpError(500, "Error while creating jwt token"));
   }
 };
