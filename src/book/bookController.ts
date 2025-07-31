@@ -218,7 +218,7 @@ const deleteBook = async (req: Request, res: Response, next: NextFunction) => {
 
   try{
     await cloudinary.uploader.destroy(coverImagePublicId)
-    await cloudinary.uploader.destroy(coverImagePublicId,{
+    await cloudinary.uploader.destroy(bookFilePublicId,{
       resource_type:'raw'
     })
   } catch(err){
